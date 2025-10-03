@@ -139,13 +139,16 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   if(window.innerWidth < 768){
-    document.querySelectorAll('.our-portfolio .item').forEach(item => {
-      item.addEventListener('click', function(e){
-        e.preventDefault();
-        // Fecha outros balões abertos
+    document.querySelectorAll('.our-portfolio .item a').forEach(link => {
+      link.addEventListener('click', function(e){
+        e.preventDefault(); // <-- impede o scroll pro topo
+        let item = link.closest('.item');
+
+        // Fecha outros balões
         document.querySelectorAll('.our-portfolio .item.active').forEach(i => {
           if(i !== item) i.classList.remove('active');
         });
+
         // Toggle neste item
         item.classList.toggle('active');
       });

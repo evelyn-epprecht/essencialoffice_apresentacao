@@ -210,6 +210,8 @@ body {
 
 .main-red-button a {
   display: inline-block;
+    width: 100%;          /* Ocupa toda a largura do container */
+    height: 100%;
   background-color: #0098DA;
   font-size: 15px;
   font-weight: 400;
@@ -592,6 +594,9 @@ header
 }
 
 @media (max-width: 767px) {
+.logo img {
+margin-right:23px;
+}
   .background-header .main-nav .nav {
     margin-top: 80px !important;
   }
@@ -616,9 +621,7 @@ header
   .header-area .container {
     padding: 0px;
   }
-  .header-area .logo {
-    margin-left: 30px;
-  }
+
   .header-area .menu-trigger {
     display: block !important;
   }
@@ -1242,6 +1245,7 @@ Blog
   font-size: 15px;
   color: #afafaf;
   font-weight: 300;
+
 }
 
 .our-blog .right-list .left-content span i {
@@ -1424,6 +1428,18 @@ responsive
     margin-left: 185px;
     margin-bottom:80px;
     }
+
+}
+
+@media (min-width: 992px) { /* desktop grande e médio */
+  #contact .row {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente a coluna */
+  }
+
+  #contact .section-heading {
+    text-align: center; /* centraliza o texto dentro da coluna */
+  }
 }
 
 @media (max-width: 1645px) {
@@ -1550,6 +1566,36 @@ responsive
 
 @media (max-width: 767px) {
 
+.main-banner {
+    padding-bottom: 20px; /* diminui o espaço abaixo do banner */
+  }
+
+  .main-banner .container {
+    padding-bottom: 0;    /* remove padding extra do container */
+  }
+
+  #services {
+    margin-top: 10px;     /* aproxima a seção do banner */
+  }
+
+.main-banner .right-image img {
+    max-width: 80%;       /* deixa a imagem um pouco menor que a tela */
+    height: auto;         /* mantém proporção */
+    margin: 0 0 0 10px;       /* centraliza horizontalmente */
+    display: block;       /* necessário para margin auto funcionar */
+    padding: 0 15px;      /* garante que não encoste nas bordas */
+  }
+
+.left-content span {
+    display: block;      /* garante que o span se comporte como bloco */
+    text-align: center;  /* centraliza o texto */
+    width: 100%;         /* ocupa toda a largura do container */
+    margin-bottom: 5px;  /* opcional, espaço abaixo do span */
+  }
+
+  .left-content p,a{
+  text-align: center;
+  }
 
   .about-us .left-image {
     bottom: -280px;
