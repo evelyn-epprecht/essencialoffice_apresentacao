@@ -117,7 +117,23 @@
 
     });
 
-	
+	window.addEventListener('load', function() {
+        const preloader = document.getElementById('js-preloader');
+        if (preloader) {
+            preloader.style.opacity = 1;
+
+            // Faz fade out suave
+            let fadeEffect = setInterval(() => {
+                if (!preloader.style.opacity) preloader.style.opacity = 1;
+                if (preloader.style.opacity > 0) {
+                    preloader.style.opacity -= 0.1;
+                } else {
+                    clearInterval(fadeEffect);
+                    preloader.style.display = 'none'; // remove o preloader da tela
+                }
+            }, 30); // ajuste a velocidade se quiser
+        }
+    });
 
 	// Window Resize Mobile Menu Fix
   function mobileNav() {

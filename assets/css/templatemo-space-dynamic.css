@@ -144,6 +144,7 @@ html,
 body {
   background: #fff;
   font-family: 'Poppins', sans-serif;
+  min-height: 100vh; /* garante que o footer fique no final da tela mesmo se o conteúdo ainda não carregou */
 }
 
 ::selection {
@@ -1578,13 +1579,17 @@ responsive
     margin-top: 10px;     /* aproxima a seção do banner */
   }
 
+.main-banner .right-image {
+  display: flex;            /* ativa flexbox */
+  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;      /* centraliza verticalmente */
+  height: 100%;             /* ocupa a altura total da coluna */
+}
+
 .main-banner .right-image img {
-    max-width: 80%;       /* deixa a imagem um pouco menor que a tela */
-    height: auto;         /* mantém proporção */
-    margin: 0 0 0 10px;       /* centraliza horizontalmente */
-    display: block;       /* necessário para margin auto funcionar */
-    padding: 0 15px;      /* garante que não encoste nas bordas */
-  }
+  max-width: 80%;          /* garante que a imagem não ultrapasse a coluna */
+  height: auto;
+}
 
 .left-content span {
     display: block;      /* garante que o span se comporte como bloco */
