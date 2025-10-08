@@ -158,6 +158,16 @@ body {
 }
 
 @media (max-width: 991px) {
+
+
+  .main-banner .container {
+    padding-bottom: 0;    /* remove padding extra do container */
+  }
+
+  #services {
+    margin-top: 10px;     /* aproxima a seção do banner */
+  }
+
   html, body {
     overflow-x: hidden;
   }
@@ -179,7 +189,7 @@ body {
 
 .section-heading h2 {
   font-size: 30px;
-  text-transform: capitalize;
+
   color: #2a2a2a;
   font-weight: 700;
   letter-spacing: 0.25px;
@@ -209,6 +219,15 @@ body {
   letter-spacing: 0.25px;
 }
 
+#sumir{
+display: none;
+}
+
+/* Deixa o botão "Site" mais largo no desktop */
+#main-buttons .main-red-button:first-child a {
+  padding: 0.6rem 2.5rem; /* aumenta só a largura, mantendo altura */
+}
+
 .main-red-button a {
   display: inline-block;
     width: 100%;          /* Ocupa toda a largura do container */
@@ -235,6 +254,22 @@ body {
   letter-spacing: 0.25px;
 }
 
+#btn-final{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+  background-color: #047BAF;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 12px 25px;
+  border-radius: 23px;
+  letter-spacing: 0.25px;
+  margin-top:25px;
+}
+
+#btn-final a {
+    color: #fff !important;
+}
 /* 
 ---------------------------------------------
 header
@@ -573,6 +608,7 @@ header
 }
 
 @media (max-width: 1200px) {
+
   .header-area .main-nav .nav li {
     padding-left: 12px;
     padding-right: 12px;
@@ -583,6 +619,9 @@ header
 }
 
 @media (max-width: 992px) {
+    #sumir {
+       display: block;
+     }
 
   .header-area .main-nav .nav li:last-child  ,
   .background-header .main-nav .nav li:last-child {
@@ -930,6 +969,30 @@ About Us Style
   margin-top: 120px;
 }
 
+/* Aplica-se a toda a seção "about" */
+#about .services .row {
+  display: flex;
+  flex-direction: column; /* força o empilhamento vertical */
+  align-items: center;    /* centraliza horizontalmente todas as colunas */
+  gap: 1.5rem;            /* espaçamento entre as caixas */
+}
+
+/* Faz todas as colunas (cada bloco com .item) terem a MESMA largura */
+#about .services .col-lg-6 {
+  width: 100%;
+  max-width: 700px; /* 🔧 Ajuste esse valor se quiser caixas mais largas ou estreitas */
+  box-sizing: border-box;
+}
+
+/* Garante que as caixas internas também mantenham essa largura */
+#about .services .item {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto; /* centraliza dentro da coluna */
+}
+
+
+
 .about-us {
   background-image: url(../images/about-bg.png);
   background-repeat: no-repeat;
@@ -1085,6 +1148,7 @@ Portfolio
 }
 
 .our-portfolio .item:hover .showed-content {
+
   top: 90px;
 }
 
@@ -1099,6 +1163,8 @@ Portfolio
   position: absolute;
   z-index: 2;
   transition: all 0.5s;
+   gap: 1.5rem;
+    width: 100%;
 }
 
 .our-portfolio .hidden-content:after {
@@ -1433,6 +1499,8 @@ responsive
 }
 
 @media (min-width: 992px) { /* desktop grande e médio */
+
+
   #contact .row {
     display: flex;
     justify-content: center; /* centraliza horizontalmente a coluna */
@@ -1450,6 +1518,57 @@ responsive
 }
 
 @media (max-width: 992px) {
+
+.our-blog .right-list ul {
+      grid-template-columns: 1fr;
+    }
+
+  .our-blog .right-list ul li {
+    display: inline-block;
+    margin-top: 0px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+  }
+  .our-blog .right-list .left-content {
+    margin-right: 0px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .our-blog .right-list .right-image,
+  .our-blog .right-list .right-image img {
+    width: 100%;
+  }
+
+
+.left-content span {
+    display: block;      /* garante que o span se comporte como bloco */
+    text-align: center;  /* centraliza o texto */
+    width: 100%;         /* ocupa toda a largura do container */
+    margin-bottom: 5px;  /* opcional, espaço abaixo do span */
+  }
+
+.main-banner {
+    padding-bottom: 20px; /* diminui o espaço abaixo do banner */
+  }
+
+.col-lg-6:has(.right-image) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Garante que a div da imagem e a própria imagem fiquem centralizadas */
+  .right-image {
+    text-align: center;
+    width: 100%;
+  }
+
+  .right-image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    height: auto;
+  }
 
     #main-buttons {
         justify-content: center !important; /* centraliza os botões */
@@ -1567,36 +1686,6 @@ responsive
 
 @media (max-width: 767px) {
 
-.main-banner {
-    padding-bottom: 20px; /* diminui o espaço abaixo do banner */
-  }
-
-  .main-banner .container {
-    padding-bottom: 0;    /* remove padding extra do container */
-  }
-
-  #services {
-    margin-top: 10px;     /* aproxima a seção do banner */
-  }
-
-.main-banner .right-image {
-  display: flex;            /* ativa flexbox */
-  justify-content: center;  /* centraliza horizontalmente */
-  align-items: center;      /* centraliza verticalmente */
-  height: 100%;             /* ocupa a altura total da coluna */
-}
-
-.main-banner .right-image img {
-  max-width: 80%;          /* garante que a imagem não ultrapasse a coluna */
-  height: auto;
-}
-
-.left-content span {
-    display: block;      /* garante que o span se comporte como bloco */
-    text-align: center;  /* centraliza o texto */
-    width: 100%;         /* ocupa toda a largura do container */
-    margin-bottom: 5px;  /* opcional, espaço abaixo do span */
-  }
 
   .left-content p,a{
   text-align: center;
@@ -1609,25 +1698,7 @@ responsive
     margin-left: 0px;
   }
 
-  .our-blog .right-list ul {
-      grid-template-columns: 1fr;
-    }
 
-  .our-blog .right-list ul li {
-    display: inline-block;
-    margin-top: 0px;
-    padding-top: 30px;
-    border-top: 1px solid #eee;
-  }
-  .our-blog .right-list .left-content {
-    margin-right: 0px;
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  .our-blog .right-list .right-image,
-  .our-blog .right-list .right-image img {
-    width: 100%;
-  }
   .phone-info h4 span {
     display: block;
     margin-top: 15px;
