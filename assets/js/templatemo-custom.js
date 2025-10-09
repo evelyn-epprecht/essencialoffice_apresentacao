@@ -118,21 +118,14 @@
     });
 
 	window.addEventListener('load', function() {
-        const preloader = document.getElementById('js-preloader');
-        if (preloader) {
-            preloader.style.opacity = 1;
-
-            // Faz fade out suave
-            let fadeEffect = setInterval(() => {
-                if (!preloader.style.opacity) preloader.style.opacity = 1;
-                if (preloader.style.opacity > 0) {
-                    preloader.style.opacity -= 0.1;
-                } else {
-                    clearInterval(fadeEffect);
-                    preloader.style.display = 'none'; // remove o preloader da tela
-                }
-            }, 30); // ajuste a velocidade se quiser
-        }
+      const preloader = document.getElementById('js-preloader');
+      if (preloader) {
+        preloader.style.transition = 'opacity 0.3s ease';
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.remove(); // remove completamente do DOM
+        }, 400);
+      }
     });
 
 	// Window Resize Mobile Menu Fix
