@@ -108,15 +108,6 @@
       });
   }
 
-
-
-	// Page loading animation
-	 $(window).on('load', function() {
-
-        $('#js-preloader').addClass('loaded');
-
-    });
-
 	window.addEventListener('load', function() {
       const preloader = document.getElementById('js-preloader');
       if (preloader) {
